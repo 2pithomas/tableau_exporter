@@ -13,6 +13,12 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.chrome.service import Service
 
+os.environ['SE_AVOID_STATS'] = 'True'
+if os.environ.get('SE_AVOID_STATS') == 'True':
+    print("SE_AVOID_STATS is set to True. Telemetry is disabled.")
+else:
+    print("Did not verify SE_AVOID_STATS is set to True. Telemetry is disabled.")
+
 start = time.time()
 
 # call the function at that bottom that will then take orgs as the input
